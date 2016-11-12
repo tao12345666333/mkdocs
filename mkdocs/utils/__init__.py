@@ -186,6 +186,9 @@ def get_html_path(path):
     path = os.path.splitext(path)[0]
     if os.path.basename(path) == 'index':
         return path + '.html'
+    elif os.path.basename(path).split('.')[0] == 'README':
+        return path.replace('README', 'index') + '.html'
+
     return "/".join((path, 'index.html'))
 
 
